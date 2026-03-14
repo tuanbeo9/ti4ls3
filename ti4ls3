@@ -1,0 +1,77 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+   Name = "Delta X | Full Teleport V3",
+   LoadingTitle = "Đang đồng bộ Workspace...",
+   LoadingSubtitle = "By Gemini",
+   ConfigurationSaving = { Enabled = false }
+})
+
+local MainTab = Window:CreateTab("Teleport List", 4483362458)
+
+-- Hàm dịch chuyển an toàn
+local function TeleportTo(target, displayName)
+    if target then
+        local hrp = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
+        if hrp then
+            local targetPos = target:IsA("Model") and target:GetModelCFrame() or target.CFrame
+            hrp.CFrame = targetPos * CFrame.new(0, 5, 0)
+            Rayfield:Notify({
+                Title = "Thành công",
+                Content = "Đã đến: " .. displayName,
+                Duration = 2
+            })
+        end
+    else
+        Rayfield:Notify({
+            Title = "Lỗi đường dẫn",
+            Content = "Không tìm thấy " .. displayName .. ". Có thể game đã update index.",
+            Duration = 4
+        })
+    end
+end
+
+-- --- DANH SÁCH CÁC NÚT BẤM ---
+
+-- Đảo 1
+MainTab:CreateButton({
+   Name = "Teleport Đảo 1",
+   Callback = function() 
+       TeleportTo(workspace.Map.dao1.Folder:GetChildren()[12], "Đảo 1") 
+   end,
+})
+
+-- Đảo 2 (Island 2)
+MainTab:CreateButton({
+   Name = "Teleport Đảo 2 (Island 2)",
+   Callback = function() 
+       TeleportTo(workspace.Map:GetChildren()[6]:GetChildren()[5]:GetChildren()[105], "Island 2") 
+   end,
+})
+
+-- ĐẢO 3 (CẬP NHẬT MỚI)
+MainTab:CreateButton({
+   Name = "Teleport Đảo 3 (Island 3)",
+   Callback = function() 
+       -- Đường dẫn: workspace.Map -> Con thứ 6 -> Model -> Con thứ 244
+       local target = workspace.Map:GetChildren()[6].Model:GetChildren()[244]
+       TeleportTo(target, "Island 3") 
+   end,
+})
+
+-- Đảo 4
+MainTab:CreateButton({
+   Name = "Teleport Đảo 4",
+   Callback = function() 
+       TeleportTo(workspace.Map.dao4:GetChildren()[135], "Đảo 4") 
+   end,
+})
+
+-- Đảo 5 (Island 5)
+MainTab:CreateButton({
+   Name = "Teleport Đảo 5 (Island 5)",
+   Callback = function() 
+       local target = workspace.Dao5:GetChildren()[138]:GetChildren()[10]
+       TeleportTo(target, "Island 5") 
+   end,
+})
