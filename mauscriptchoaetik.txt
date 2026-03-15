@@ -1,5 +1,4 @@
--- ✅ MẪU CHUẨN CHO NGƯỜI MỚI | TÉO HUB 🍎
--- Giữ nguyên giao diện thật, chỉ thêm hướng dẫn 👈 ngay bên cạnh dòng cần sửa
+--- ✅ MẪU CHUẨN CHO NGƯỜI MỚI | TÉO HUB 🍎
 
 repeat task.wait() until game:IsLoaded()
 
@@ -17,7 +16,7 @@ ImageButton.BorderSizePixel = 0
 ImageButton.Position = UDim2.new(0.10615778, 0, 0.16217947, 0)
 ImageButton.Size = UDim2.new(0, 40, 0, 40)
 ImageButton.Draggable = true
-ImageButton.Image = "http://www.roblox.com/asset/?id=108643075694724"  -- 👈 đổi ID ảnh nút mở menu tại đây (ảnh roblox)
+ImageButton.Image = "http://www.roblox.com/asset/?id=108643075694724"
 
 UICorner.CornerRadius = UDim.new(1, 10)
 UICorner.Parent = ImageButton
@@ -28,71 +27,97 @@ end)
 
 -- 🟣 Giao diện Fluent
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
-repeat wait() until game:IsLoaded()
 
 -- 🪟 Cửa sổ chính
 local Window = Fluent:CreateWindow({
-	Title = "tàidz =}",         -- 👈 đổi thành tên script của bạn
-	SubTitle = "premium test 1",              -- 👈 đổi mô tả phụ
+	Title = "tàidz =}",
+	SubTitle = "premium test 1",
 	TabWidth = 157,
 	Size = UDim2.fromOffset(450, 300),
 	Acrylic = true,
-	Theme = "Aqua",                   -- 👈 đổi màu chủ đạo: Amethyst, Dark, Aqua, Light,...
+	Theme = "Aqua",
 	MinimizeKey = Enum.KeyCode.End
 })
 
--- 📑 Các tab (mục chính)
+-- 📑 Tabs
 local Tabs = {
-	Main0 = Window:AddTab({ Title = "tên kênh tiktok: ti4ls3" }),  -- 👈 đổi tên tab 1
-	Main1 = Window:AddTab({ Title = "blox fruits 🍎🍏" }),  -- 👈 đổi tên tab 2
-	Main2 = Window:AddTab({ Title = "all game" }),     -- 👈 đổi tên tab 3
-	Main3 = Window:AddTab({ Title = "titan fishing 🐟🦈" }),    -- 👈 đổi tên tab 5
+	Main0 = Window:AddTab({ Title = "tên kênh tiktok: ti4ls3" }),
+	Main1 = Window:AddTab({ Title = "blox fruits 🍎🍏" }),
+	Main2 = Window:AddTab({ Title = "all game" }),
+	Main3 = Window:AddTab({ Title = "titan fishing 🐟🦈" }),
+}
 
 ------------------------------------------------
--- TAB 1: Các kênh tiktok
+-- TAB 1
 ------------------------------------------------
-www.tiktok.ti4ls3
+Tabs.Main0:AddParagraph({
+	Title = "TikTok",
+	Content = "www.tiktok.com/@ti4ls3"
+})
+
 ------------------------------------------------
--- TAB 2: Ví dụ thêm script
+-- TAB 2: BLOX FRUITS
 ------------------------------------------------
+
 Tabs.Main1:AddButton({
-	Title = "hop sever",                             -- 👈 tên nút hiển thị
-	Description = "hop sever free😃",-- 👈 mô tả
+	Title = "hop sever",
+	Description = "hop sever free😃",
 	Callback = function()
-		local Settings = {
-			JoinTeam = "Pirates";   -- 👈 team mặc định: Pirates hoặc Marines
-			Translator = true;      -- 👈 bật dịch sang tiếng Việt nếu có loadstring(game:HttpGet("https://rise-evo.xyz/apiv3/ServerFinder.lua"))()
-			
+
+		loadstring(game:HttpGet("https://rise-evo.xyz/apiv3/ServerFinder.lua"))()
+
+	end
+})
+
 Tabs.Main1:AddButton({
-	Title = "gravity hub",                             -- 👈 tên nút hiển thị
-	Description = "2 loại bản menu redz hoặc banana",-- 👈 mô tả
+	Title = "gravity hub",
+	Description = "menu redz hoặc banana",
 	Callback = function()
-		local Settings = {
-			JoinTeam = "Pirates";   -- 👈 team mặc định: Pirates hoặc Marines
-			Translator = true;      -- 👈 bật dịch sang tiếng Việt nếu có loadstring(game:HttpGet("https://raw.githubusercontent.com/Dev-GravityHub/BloxFruit/refs/heads/main/Main.lua"))()
-			
+
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Dev-GravityHub/BloxFruit/refs/heads/main/Main.lua"))()
+
+	end
+})
+
 Tabs.Main1:AddButton({
-	Title = "xeter",                             -- 👈 tên nút hiển thị
-	Description = "tốc đánh nhanh, script ngon",-- 👈 mô tả
+	Title = "xeter",
+	Description = "tốc đánh nhanh, script ngon",
 	Callback = function()
-		local Settings = {
-			JoinTeam = "Pirates";   -- 👈 team mặc định: Pirates hoặc Marines
-			Translator = true;      -- 👈 bật dịch sang tiếng Việt nếu có 
-getgenv().Version = "V4"
-getgenv().Team = "Marines"
-loadstring(game:HttpGet("https://raw.githubusercontent.com/TlDinhKhoi/Xeter/refs/heads/main/Main.lua"))()
+
+		getgenv().Version = "V4"
+		getgenv().Team = "Marines"
+
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/TlDinhKhoi/Xeter/refs/heads/main/Main.lua"))()
+
+	end
+})
+
+------------------------------------------------
+-- TAB 3: ALL GAME
+------------------------------------------------
+
 Tabs.Main2:AddButton({
-	Title = "fly",                             -- 👈 tên nút hiển thị
-	Description = "bay all game😃",-- 👈 mô tả
+	Title = "fly",
+	Description = "bay all game😃",
 	Callback = function()
-		local Settings = {
-			JoinTeam = "Pirates";   -- 👈 team mặc định: Pirates hoặc Marines
-			Translator = true;      -- 👈 bật dịch sang tiếng Việt nếu có loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()
+
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()
+
+	end
+})
+
+------------------------------------------------
+-- TAB 4: TITAN FISHING------------------------------------------------
+
+Tabs.Main3:
+------------------------------------------------
 
 Tabs.Main3:AddButton({
-	Title = "script câu cá",                             -- 👈 tên nút hiển thị
-	Description = "auto fishinh",-- 👈 mô tả
+	Title = "script câu cá",
+	Description = "auto fishing",
 	Callback = function()
-		local Settings = {
-			JoinTeam = "Pirates";   -- 👈 team mặc định: Pirates hoặc Marines
-			Translator = true;      -- 👈 bật dịch sang tiếng Việt nếu có 
+
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/example/fishing/main/script.lua"))()
+
+	end
+})
